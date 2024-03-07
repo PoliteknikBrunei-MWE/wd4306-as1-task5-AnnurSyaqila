@@ -8,13 +8,17 @@ import { IonicModule } from '@ionic/angular';
   templateUrl: './place-detail.page.html',
   styleUrls: ['./place-detail.page.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule]
+  imports: [IonicModule, CommonModule, FormsModule],
 })
 export class PlaceDetailPage implements OnInit {
+  constructor() {}
 
-  constructor() { }
+  ngOnInit() {}
 
-  ngOnInit() {
+  isBookModel = false;
+  isEditModel = false;
+
+  setOpen(isOpen: boolean) {
+    this.isBookModel = isOpen;
   }
-
 }
