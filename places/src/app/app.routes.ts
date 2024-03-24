@@ -1,7 +1,19 @@
 import { Routes } from '@angular/router';
 import { TabsPage } from './tabs/tabs.page';
+import { AuthGuard } from './auth.guard';
 
 export const routes: Routes = [
+  { path: '', redirectTo: 'auth', pathMatch: 'full' },
+  {
+    path: 'auth',
+    loadChildren: () => import('./auth/auth.page').then((m) => m.AuthPage),
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'places',
+    loadChildren: () =>
+      import('./places/places.page').then((m) => m.PlacesPage),
+  },
   {
     path: 'auth',
     loadComponent: () => import('./auth/auth.page').then((m) => m.AuthPage),
