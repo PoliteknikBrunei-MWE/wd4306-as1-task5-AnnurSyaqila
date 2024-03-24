@@ -33,9 +33,16 @@
       />
     </ion-card>
     <br />
-    <ion-button expand="block">Place 1</ion-button>
-    <ion-button expand="block">Place 2</ion-button>
-    <ion-button expand="block">Place 3</ion-button>
+    <ion-button expand="block" [routerLink]="['/place-detail']">
+      Mount Bromo
+    </ion-button>
+
+    <ion-button expand="block" [routerLink]="['/place-detail']"
+      >Mount Fuji</ion-button
+    >
+    <ion-button expand="block" [routerLink]="['/place-detail']"
+      >Mount Kalimanjaro</ion-button
+    >
     <br />
   </ion-content>
 </div>
